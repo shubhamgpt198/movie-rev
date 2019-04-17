@@ -1,0 +1,76 @@
+<!----
+//****************************************************************************//
+//**************** Created By:  Shubham Kumar Gupta *************************//
+//**************************************************************************// 
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+<!-- Bootstrap core CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.4/css/mdb.min.css" rel="stylesheet">
+
+<title>MovRev </title>
+
+<!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.4/js/mdb.min.js"></script>
+</head>
+
+    <nav class="navbar navbar-expand-lg navbar-dark success-color">
+        <a class="navbar-brand" href="./">Movie Review</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/about">About</a>
+            </li>
+          </ul>
+        </div>
+    </nav>
+    </br>
+    <div class="container-fluid" >
+	<center> 
+	<h2 class="col-md-9 animated bounce"> <%= buffer.Title %> ( <%= buffer.Year %> ) </h2>
+	<img  src="<%= poster %>" alt="Card image cap" class="animated tada">
+	</br> </br>
+	<div class="col-md-9 animated lightSpeedIn">
+	<div class="card">
+	<ul class="list-group list-group-flush">
+	<li class="list-group-item""> <i class="far fa-calendar-check red-text" data-toggle="tooltip" title="Release Date"></i> <%= buffer.Released %> </li>
+	<li class="list-group-item"> <i class="fas fa-video cyan-text" data-toggle="tooltip" title="Movie Runtime"></i> <%= buffer.Runtime %> </li>
+	<li class="list-group-item"> <i class="fab fa-microsoft green-text" data-toggle="tooltip" title="Movie Genre"></i> <%= buffer.Genre %> </li>
+	<li class="list-group-item"> <i class="far fa-user pink-text" data-toggle="tooltip" title="Director"></i> <%= buffer.Director %> </li>
+	<li class="list-group-item"> <i class="fas fa-users blue-text" data-toggle="tooltip" title="Actors"></i> <%= buffer.Actors %> </li>
+	<li class="list-group-item"> <i class="fas fa-heart red-text" data-toggle="tooltip" title="Rotten Tomatoes Ratings"></i> <%= buffer.Ratings[1].Value %> </li>
+	<li class="list-group-item"> <i class="fas fa-star cyan-text" data-toggle="tooltip" title="IMDb Ratings"></i> <%= buffer.imdbRating %> </li>
+	<li class="list-group-item"> <i class="fas fa-dollar-sign amber-text" data-toggle="tooltip" title="Box Office Earnings"></i> <%= buffer.BoxOffice %> </li>
+	<li class="list-group-item"><i class="fas fa-info blue-text" data-toggle="tooltip" title="More Info"></i> <a href="<%= buffer.Website %>"> Know More... </a> </li>
+	</div>
+	</div>
+	</div>	
+	</center>
+	</br> </br> </br>
+</div>
+
+
+<script>
+$(function () {
+$('[data-toggle="tooltip"]').tooltip()
+})
+</script>
+</html>
